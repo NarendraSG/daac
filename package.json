@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/NarendraSG/daac#readme",
   "dependencies": {
+    "bluebird": "^3.7.2",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.8"
   }
