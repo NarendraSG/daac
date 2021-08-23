@@ -1,5 +1,5 @@
 const App = require('express')();
-const mongoos = require('mongoose');
+const mongoose = require('mongoose');
 
 
 App.get('/', (req, res) => {
@@ -8,4 +8,7 @@ App.get('/', (req, res) => {
 
 App.listen(3000, ()=> {
     console.log('Listening on 3000');
+    mongoose.connect("localhost:27017/db", {useNewUrlParser: true})
+    .then(db => {console.log("SUCCESSFULLY CONNECTED TO MONGO")})
+    .catch(error => {console.log("UNSUCCESSFUL CONNECTING MONGO")});
 })
