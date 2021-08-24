@@ -3,13 +3,16 @@ tasks:
   - name: Copy Environment variable
     init: cp .env.example .env
 
-  - name: Initialize DB and Dependencies
-    before: docker-compose up -d
-    init: npm i
+  - name: Initialize DB 
+    init: > 
+      mongo 
+      docker-compose up -d && npm i && gp sync-done mongo
 
-  - name: Server Start
+  - name: Installing Dependencies
+    init: gp sync-await mongo
     command: node index.js
 
+  # - name: Server Start
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
