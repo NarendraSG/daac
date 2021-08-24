@@ -5,11 +5,10 @@ tasks:
 
   - name: Initialize DB 
     init: > 
-      mongo 
-      docker-compose up -d && npm i && gp sync-done mongo
+      docker-compose up -d && npm i && gp sync-done docker-compose
 
   - name: Installing Dependencies
-    init: gp sync-await mongo
+    init: gp sync-await docker-compose
     command: node index.js
 
   # - name: Server Start
