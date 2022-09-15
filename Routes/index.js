@@ -3,7 +3,7 @@ const CategoryRoute = require("./Category");
 const TransactionRoute = require("./Transaction");
 
 module.exports = {
-    UserRoute,
-    CategoryRoute,
-    TransactionRoute
-}
+  UserRoute,
+  CategoryRoute,
+  TransactionRoute,
+};
